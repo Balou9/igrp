@@ -1,0 +1,18 @@
+{
+  "name": "igrp",
+  "version": "0.0.0",
+  "description": "Indexical grep",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "keywords": [
+    "match",
+    "pattern"
+  ],
+  "author": "Emmanuel Owosekun",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.9.1"
+  }
+}
