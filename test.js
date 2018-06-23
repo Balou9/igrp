@@ -11,13 +11,15 @@ function isACharacter (current) {
 }
 
 tape('Indexical grep', function (t) {
-  t.ok(igrp(names, 'Mikey').every(isANumber))
-  t.ok(igrp(names, '419').every(isANumber))
+  igrp(names, 'Allday', undefined, function (err, data) {
+    t.ok(data.every(isANumber))
+  })
   t.end()
 })
 
-tape('Second grep', function (t) {
-  t.ok(igrp(names, 'Mikey', true).every(isACharacter))
-  t.ok(igrp(names, '419', true).every(isACharacter))
+tape('Indexical value', function (t) {
+  igrp(names, 'Allday', true, function (err, data) {
+    t.ok(data.every(isACharacter))
+  })
   t.end()
 })
