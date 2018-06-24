@@ -23,3 +23,16 @@ tape('Indexical value', function (t) {
   })
   t.end()
 })
+
+tape('Error', function (t) {
+  t.throws(igrp.bind(null, 'names', 'Mikey', undefined),
+    function (err, data) {
+      if (err) throw err
+    })
+  t.end()
+})
+
+tape('Pattern error', function (t) {
+  t.throws(igrp.bind(null, names, 'Mikey', true))
+  t.end()
+})

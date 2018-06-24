@@ -1,5 +1,3 @@
-//  control
-
 function igraber (arr, pattern, value) {
   var result = []
     for (var i = 0; i < arr.length; i++) {
@@ -15,7 +13,7 @@ function igraber (arr, pattern, value) {
 }
 
 function igrp (arr, pattern, value, callback) {
-  if (!arr) return callback(err)
+  if (!arr) throw new TypeError('First argument should be array.')
   callback(null, igraber(arr, pattern, value))
 }
 
