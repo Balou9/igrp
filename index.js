@@ -1,19 +1,21 @@
 function igraber (arr, pattern, value) {
-  var result = []
-    for (var i = 0; i < arr.length; i++) {
-      if (pattern === arr[i] && value === true) {
-        result.push(arr[i])
-      }
-
-      if (pattern === arr[i] && value !== true) {
-        result.push(i)
-      }
-    }
-  return result
+  if (!value) {
+    return arr.map( function (each, index) {
+      if (each === pattern) return index
+    }).filter( function (each) {
+      if (each) return each
+    })
+  }
+  if (value) {
+    return arr.filter( function (each) {
+      if (each === pattern)
+      return each
+    })
+  }
 }
 
 function igrp (arr, pattern, value, callback) {
-  if (!arr) throw new TypeError('First argument should be array.')
+  if (Array.isArray(arr) !== true) throw new TypeError('1st argument should be array.')
   callback(null, igraber(arr, pattern, value))
 }
 

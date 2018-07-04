@@ -2,37 +2,29 @@ var tape = require('tape')
 var igrp = require('./index.js')
 var names = ['Mikey', 'Allday', 'Mikey','Everyday', '419', 'Allday', '419']
 
-function isANumber (current) {
-  return typeof current === 'number'
-}
-
 function isACharacter (current) {
   return typeof current === 'string'
 }
 
-tape('Indexical grep', function (t) {
-  igrp(names, 'Allday', undefined, function (err, data) {
-    t.ok(data.every(isANumber))
-  })
-  t.end()
-})
+function isANumber (current) {
+  return typeof current === 'number'
+}
 
-tape('Indexical value', function (t) {
+tape('Value', function (t) {
   igrp(names, 'Allday', true, function (err, data) {
     t.ok(data.every(isACharacter))
+    t.end()
   })
-  t.end()
 })
 
-tape('Error', function (t) {
-  t.throws(igrp.bind(null, 'names', 'Mikey', undefined),
-    function (err, data) {
-      if (err) throw err
-    })
-  t.end()
+tape('Index', function (t) {
+  igrp(names, 'Allday', undefined, function (err, data) {
+    t.ok(data.every(isANumber))
+    t.end()
+  })
 })
 
-tape('Pattern error', function (t) {
-  t.throws(igrp.bind(null, names, 'Mikey', true))
+tape('Array Error', function (t) {
+  t.throws(igrp.bind(null, 419, 'Mikey', true))
   t.end()
 })
