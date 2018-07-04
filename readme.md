@@ -1,6 +1,6 @@
 # igrp
 
-[![build status](http://img.shields.io/travis/balou9/igrp.svg?style=flat)](http://travis-ci.org/balou9/igrp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/balou9/igrp?branch=master&svg=true)](https://ci.appveyor.com/project/balou9/igrp)
+[![build status](http://img.shields.io/travis/Balou9/igrp.svg?style=flat)](http://travis-ci.org/Balou9/igrp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/Balou9/igrp?branch=master&svg=true)](https://ci.appveyor.com/project/Balou9/igrp)
 
 ***
 
